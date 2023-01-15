@@ -6,4 +6,4 @@ This Minecraft mod for Fabric adds a button to the edit world screen to quickly 
 
 ## Disclaimer
 
-I made this as a way to learn mixins so do not expect high quality code or anything
+I made this as a way to learn mixins and it was made in a rush so if you have any issues or suggestions please report them to me :)
