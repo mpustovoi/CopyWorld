@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "copyworld",
+  "version": "${version}",
+  "name": "CopyWorld",
+  "description": "Adds a button to the edit world screen to quickly make a copy of your world!",
+  "authors": [
+    "Iru21"
+  ],
+  "contact": {
+    "website": "https://iru.codes",
+    "repo": "https://github.com/Iru21/copyworld"
+  },
+  "license": "MIT",
+  "icon": "assets/copyworld/icon.png",
+  "environment": "client",
+  "entrypoints": {},
+  "mixins": [
+    "copyworld.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.12",
+    "fabric": "*",
+    "minecraft": "1.19.3"
+  }
+}
