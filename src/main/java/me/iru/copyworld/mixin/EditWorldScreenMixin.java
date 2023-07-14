@@ -16,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -42,10 +43,8 @@ public abstract class EditWorldScreenMixin extends Screen {
             if(worldPath == null) {
                 return;
             }
-            Path copyWorldPath = Paths.get(worldPath + "-copy");
-            while(copyWorldPath.toFile().exists()) {
-                copyWorldPath = Paths.get(copyWorldPath + "-copy");
-            }
+            Path copyWorldPath = generateName(worldPath);
+
             try {
                 FileUtils.copyDirectory(worldPath.toFile(), copyWorldPath.toFile());
             } catch(IOException e) {
@@ -55,6 +54,7 @@ public abstract class EditWorldScreenMixin extends Screen {
                     return;
                 }
             }
+
             Path levelDatPath = Paths.get(worldPath + File.separator + "level.dat");
             Path copiedLevelDatPath = Paths.get(copyWorldPath + File.separator + "level.dat");
             try {
@@ -76,6 +76,7 @@ public abstract class EditWorldScreenMixin extends Screen {
         }).dimensions(this.width / 2 - 100, this.height / 4 + 168 + 5, 200, 20).build());
     }
 
+    @Unique
     @Nullable
     private Path getWorldPath() {
         LevelSummary summary = this.storageSession.getLevelSummary();
@@ -88,7 +89,17 @@ public abstract class EditWorldScreenMixin extends Screen {
         return Paths.get(iconPathString.substring(0, iconPathString.length() - 9));
     }
 
+    @Unique
     private void showToast(MutableText title, MutableText description) {
         MinecraftClient.getInstance().getToastManager().add(new SystemToast(SystemToast.Type.WORLD_BACKUP, title, description));
+    }
+
+    @Unique
+    private Path generateName(Path original) {
+        Path name = Paths.get(original + "-copy");
+        while(name.toFile().exists()) {
+            name = Paths.get(name + "-copy");
+        }
+        return name;
     }
 }

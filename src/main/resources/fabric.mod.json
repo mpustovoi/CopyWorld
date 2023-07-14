@@ -9,7 +9,7 @@
   ],
   "contact": {
     "website": "https://iru.codes",
-    "repo": "https://github.com/Iru21/copyworld"
+    "repo": "https://github.com/Iru21/CopyWorld"
   },
   "license": "MIT",
   "icon": "assets/copyworld/icon.png",
@@ -21,6 +21,6 @@
   "depends": {
     "fabricloader": ">=0.14.12",
     "fabric": "*",
-    "minecraft": "1.19.3"
+    "minecraft": ">=1.19.3"
   }
 }
