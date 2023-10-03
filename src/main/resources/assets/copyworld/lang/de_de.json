@@ -1,0 +1,7 @@
+{
+  "selectWorld.edit.copy": "Kopie Welt",
+  "selectWorld.edit.copyFailed": "Kopie hat fehlgeschlagen",
+  "selectWorld.edit.copySummaryFailed": "Keine Weltinformation war gefunden",
+  "selectWorld.edit.copySuccess": "Welt hat kopiert!",
+  "selectWorld.edit.copySuccessDetails": "Hat das Welt erfolgreich %s kopiert"
+}
