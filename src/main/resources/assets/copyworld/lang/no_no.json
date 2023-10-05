@@ -1,0 +1,7 @@
+{
+  "selectWorld.edit.copy": "Kopier Verden",
+  "selectWorld.edit.copyFailed": "Kopiering mislyktes",
+  "selectWorld.edit.copySummaryFailed": "Kunne ikke hente informasjon om verdenen",
+  "selectWorld.edit.copySuccess": "Verden Kopiert!",
+  "selectWorld.edit.copySuccessDetails": "Vellykket kopiering av verden %s"
+}
