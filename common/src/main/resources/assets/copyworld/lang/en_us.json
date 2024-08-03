@@ -1,0 +1,7 @@
+{
+  "selectWorld.edit.copy": "Copy World",
+  "selectWorld.edit.copyFailed": "Copy creation failed",
+  "selectWorld.edit.copySummaryFailed": "Could not retrieve world info",
+  "selectWorld.edit.copySuccess": "World Copied!",
+  "selectWorld.edit.copySuccessDetails": "Successfully copied world %s"
+}
